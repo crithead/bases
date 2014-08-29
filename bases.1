@@ -1,0 +1,86 @@
+.MA "Local User Commands"
+.TH BASES 1 "29 August 2014"
+.SH NAME
+bases \- print numbers in multiple bases
+.SH SYNOPSIS
+.B bases
+--help | -a | -{bdhno} N ...
+
+.SH DESCRIPTION
+Print numbers from the command line in multiple bases: hexadecimal, decimal,
+octal, and (optionally) binary.  Numbers and flags on the command line are
+processed in order and produce one line of output per input value.
+
+The default input is decimal (base 10).  Hexadecimal input numbers can be
+prefixed with "0x" or postfixed with "h" or "H". Octal input numbers
+can be prefixed with "0" or postfixed with "O" or "o" (the letter 'O').
+Binary input numbers must be postfixed with "b" or "B".
+
+Command line options [bdho] can be used to force interpretation of the
+arguments that follow.  Prefixes and postfixes on input will be ignored.
+
+Non-digit separators in the input values are ignored.
+
+.SH OPTIONS
+.TP
+.B --help
+Print a summary of options and exit.
+.TP
+.B -a
+Enable all output types (adds binary output).
+.TP
+.B -b
+Force following args to be interpreted as binary.
+.TP
+.B -d
+Force following args to be interpreted as decimal.
+.TP
+.B -h
+Force following args to be interpreted as hexidecimal.
+.TP
+.B -n
+Unset the force flag.
+.TP
+.B -o
+Force following args to be interpreted as octal.
+
+.SH RETURN VALUE
+The program always returns 0.
+
+.SH BUGS
+Bad input is converted to bad output without comment.  This feature could be
+considered a defect.  Number size is limited to 32-bit integers.
+
+.SH EXAMPLES
+
+Print a moderately helpful usage message.
+
+    bases --help
+
+Print the decimal number 100 in hexadecimal, decimal, and octal.
+
+    bases 100
+
+Print the decimal number 100 in hexadecimal, decimal, octal, and binary.
+
+    bases -a 100
+
+Print the binary number 101, the octal number 101, the decimal number 101 and
+the hexadecimal number 101.
+Output is hexadecimal, decimal, and octal.
+
+    bases 101b 101o 101 101h
+
+Print the hexadecimal numbers 10 and 100, the decimal numbers 10 and 100, the
+octal numbers 10 and 101, and the binary numbers 10 and 101.
+Output is hexadecimal, decimal, and octal.
+
+    bases -h 10 100 -d 10 100 -o 10 100 -b 10 100
+
+Print the numbers, ignoring non-digit seprators.
+
+    bases 1101:1001b ABCD:E123h 1,000,000
+
+.SH AUTHOR
+Donald Perkovich <donp@hp.com>
+
