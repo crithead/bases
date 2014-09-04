@@ -11,7 +11,10 @@ EXE = bases
 all : $(EXE)
 
 $(EXE) : $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(EXE)
+	$(CC) $(CFLAGS) -O2 $(SRC) -o $(EXE)
+
+debug : $(SRC)
+	$(CC) $(CFLAGS) -g $(SRC) -o $(EXE)
 
 test : $(EXE)
 	@echo "=== Running Bases Tests"

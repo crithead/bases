@@ -7,9 +7,9 @@ bases \- print numbers in multiple bases
 --help | -a | -{bdhno} N ...
 
 .SH DESCRIPTION
-Print numbers from the command line in multiple bases: hexadecimal, decimal,
-octal, and (optionally) binary.  Numbers and flags on the command line are
-processed in order and produce one line of output per input value.
+Print integer numbers from the command line in multiple bases: hexadecimal,
+decimal, octal, and (optionally) binary.  Numbers and flags on the command
+line are processed in order and produce one line of output per input value.
 
 The default input is decimal (base 10).  Hexadecimal input numbers can be
 prefixed with "0x" or postfixed with "h" or "H". Octal input numbers
@@ -48,8 +48,12 @@ Force following args to be interpreted as octal.
 The program always returns 0.
 
 .SH BUGS
-Bad input is converted to bad output without comment.  This feature could be
-considered a defect.  Number size is limited to 32-bit integers.
+Binary input with a leading zero is interpreted as octal even when the 'b'
+postfix is present.
+
+Number size is limited to 32-bit signed integers.
+
+Bad input is converted to bad output.
 
 .SH EXAMPLES
 
