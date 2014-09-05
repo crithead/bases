@@ -1,4 +1,5 @@
 // bases.cpp
+// (C) 2014 Donald Perkovich. All rights reserved.
 // Convert numbers to their representation in multiple base systems.
 //
 // Command line arguments:

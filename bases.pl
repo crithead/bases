@@ -3,7 +3,7 @@
 # - only takes decimal input
 # - binary not tested
 
-my $base = "default";  
+my $base = "default";
 my $n = shift;
 
 if ($base eq "b") {
