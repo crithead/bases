@@ -17,9 +17,12 @@ $(EXE) : $(SRC)
 debug : $(SRC)
 	$(CC) $(CFLAGS) -g $(SRC) -o $(EXE)
 
+check : $(SRC)
+	cppcheck -v --enable=style $(SRC)
+
 test : $(EXE)
 	@echo "=== Running Bases Tests"
-	@./$(EXE)
+	@./test_bases
 	@echo "=== Done"
 
 .PHONY : clean
