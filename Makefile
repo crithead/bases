@@ -1,4 +1,5 @@
 #  Bases Makefile
+# (C) 2014 Donald Perkovich. All rights reserved.
 CC = g++
 CFLAGS = -Wall -pedantic --std=c++11
 
