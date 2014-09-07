@@ -1,26 +1,19 @@
 # Compiled Object files
-*.slo
-*.lo
 *.o
-*.obj
 
 # Compiled Dynamic libraries
 *.so
-*.dylib
-*.dll
 
 # Compiled Static libraries
-*.lai
-*.la
 *.a
-*.lib
 
-# Executables
-*.exe
-*.out
-*.app
+# Executable
 bases
 
 # Editor droppings
 *.swp
+
+# Doc output
+bases.1
+bases.1.html
 

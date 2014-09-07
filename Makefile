@@ -8,6 +8,7 @@ OUTPUT_DIR = output
 SRC = bases.cpp
 OBJ = bases.o
 EXE = bases
+DOC = bases.1.txt
 
 all : $(EXE)
 
@@ -20,6 +21,10 @@ debug : $(SRC)
 check : $(SRC)
 	cppcheck -v --enable=style $(SRC)
 
+doc : $(DOC)
+	asciidoc -d manpage $<
+	a2x --doctype manpage --format manpage $<
+
 test : $(EXE)
 	@echo "=== Running Bases Tests"
 	@./test_bases
@@ -27,7 +32,7 @@ test : $(EXE)
 
 .PHONY : clean
 clean:
-	rm -f *.o $(EXE)
+	rm -f *.o $(EXE) $(EXE).1 $(EXE).1.html $(EXE).1.pdf
 
 bases.o: bases.cpp
 
