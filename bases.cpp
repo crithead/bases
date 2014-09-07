@@ -71,10 +71,10 @@ int main( int argc, char *argv[] )
 			break;
 		}
 		std::cout << argv[ i ] << ": 0x" << std::setbase( 16 ) << n
-				<< ", " << std::setbase( 10 ) << n
-				<< ", 0" << std::setbase( 8 ) << n;
+				<< " " << std::setbase( 10 ) << n
+				<< " 0" << std::setbase( 8 ) << n;
 		if ( print_binary )
-			std::cout << ", " << int_to_bin_str( n );
+			std::cout << " " << int_to_bin_str( n );
 		std::cout << std::endl;
 	}
 
